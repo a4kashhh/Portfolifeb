@@ -18,7 +18,7 @@ function Footer() {
     <section
       style={{ cursor: 'url("/icons/cursorWhite.png"), auto' }}
       ref={footerRef}
-      className="footer bg-black flex flex-col justify-start items-center pt-12 px-5 h-[500px] overflow-hidden"
+      className="footer bg-black flex flex-col justify-start items-center pt-12 px-5 md:h-[600px] h-[400px] overflow-hidden"
     >
       <div className="container flex flex-col items-center sm:flex-row md:mb-0 mb-16">
         <Image src="/icons/logoIcon.png" alt="logo" width={100} height={100} />
