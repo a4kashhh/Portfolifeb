@@ -8,7 +8,41 @@ function VideoPlaying(props: Props) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
     const [isMuted, setIsMuted] = useState(true);
-    const [hasInteracted, setHasInteracted] = useState(false);
+    const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+    // Fade audio in/out smoothly
+    const fadeAudio = (video: HTMLVideoElement, fadeIn: boolean) => {
+        // Clear any existing fade
+        if (fadeIntervalRef.current) {
+            clearInterval(fadeIntervalRef.current);
+        }
+
+        const targetVolume = fadeIn ? 1 : 0;
+        const step = fadeIn ? 0.05 : -0.05;
+        const interval = 50; // 50ms intervals for smooth fade
+
+        if (fadeIn) {
+            video.muted = false;
+            video.volume = 0;
+        }
+
+        fadeIntervalRef.current = setInterval(() => {
+            let newVolume = video.volume + step;
+            
+            if (fadeIn && newVolume >= targetVolume) {
+                video.volume = targetVolume;
+                clearInterval(fadeIntervalRef.current!);
+                fadeIntervalRef.current = null;
+            } else if (!fadeIn && newVolume <= targetVolume) {
+                video.volume = targetVolume;
+                video.muted = true;
+                clearInterval(fadeIntervalRef.current!);
+                fadeIntervalRef.current = null;
+            } else {
+                video.volume = Math.max(0, Math.min(1, newVolume));
+            }
+        }, interval);
+    };
 
     useEffect(() => {
         const video = videoRef.current;
@@ -16,17 +50,20 @@ function VideoPlaying(props: Props) {
 
         if (!video || !section) return;
 
+        // Set initial volume
+        video.volume = 0;
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (hasInteracted) {
-                        if (entry.isIntersecting) {
-                            video.muted = false;
-                            setIsMuted(false);
-                        } else {
-                            video.muted = true;
-                            setIsMuted(true);
-                        }
+                    if (entry.isIntersecting) {
+                        // Fade audio in when video comes into view
+                        fadeAudio(video, true);
+                        setIsMuted(false);
+                    } else {
+                        // Fade audio out when video goes out of view
+                        fadeAudio(video, false);
+                        setIsMuted(true);
                     }
                 });
             },
@@ -37,16 +74,23 @@ function VideoPlaying(props: Props) {
 
         return () => {
             observer.disconnect();
+            if (fadeIntervalRef.current) {
+                clearInterval(fadeIntervalRef.current);
+            }
         };
-    }, [hasInteracted]);
+    }, []);
 
     const handleVideoClick = () => {
         const video = videoRef.current;
         if (!video) return;
         
-        setHasInteracted(true);
-        video.muted = !video.muted;
-        setIsMuted(video.muted);
+        if (video.muted || video.volume === 0) {
+            fadeAudio(video, true);
+            setIsMuted(false);
+        } else {
+            fadeAudio(video, false);
+            setIsMuted(true);
+        }
     };
 
     return (
@@ -56,6 +100,7 @@ function VideoPlaying(props: Props) {
                    autoPlay 
                    muted 
                    loop 
+                   playsInline
                    ref={videoRef} 
                    onClick={handleVideoClick}
                    className='video w-full h-full object-cover cursor-pointer mb-8'
