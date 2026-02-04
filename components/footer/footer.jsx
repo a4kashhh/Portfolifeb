@@ -18,7 +18,7 @@ function Footer() {
     <section
       style={{ cursor: 'url("/icons/cursorWhite.png"), auto' }}
       ref={footerRef}
-      className="footer bg-black flex flex-col justify-start items-center pt-12 px-5 md:h-[600px] h-[400px] overflow-hidden"
+      className="footer bg-black flex flex-col justify-start items-center pt-12 px-5 md:h-[550px] h-[350px] overflow-hidden"
     >
       <div className="container flex flex-col items-center sm:flex-row md:mb-0 mb-16">
         <Image src="/icons/logoIcon.png" alt="logo" width={100} height={100} />
@@ -75,13 +75,13 @@ function Footer() {
       </div>
       <p
         ref={thankRef}
-        className={`thanku md:block hidden ${anton.className} text-[#d7d7d7] md:text-[360px]`}
+        className={`thanku md:block hidden ${anton.className} text-[#d7d7d7] md:text-[280px] leading-none`}
       >
         THANK YOU
       </p>
       <p
         ref={thankRef}
-        className={`block md:hidden ${anton.className} text-[#d7d7d7] text-[140px] text-center leading-[1]`}
+        className={`block md:hidden ${anton.className} text-[#d7d7d7] text-[80px] text-center leading-[1]`}
       >
         THANK YOU
       </p>
