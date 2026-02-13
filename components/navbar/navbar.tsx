@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Comp, { openSans } from "../NavbarComponents/comp";
 import gsap from "gsap";
 
@@ -47,6 +48,14 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
       <div className="bar md:block hidden">
         <Comp homeRef={homeRef} aboutRef={aboutRef} workRef={workRef} />
       </div>
+      {/* Mobile Valentine Button */}
+      <Link href="https://valentine.a4kashhh.in" target="_blank" className="md:hidden block">
+        <button
+          className="px-4 py-2 rounded-full text-white text-sm bg-gradient-to-r from-pink-500 to-red-500 hover:scale-[105%] active:scale-95 transition-all duration-300 ease-in-out animate-pulse"
+        >
+          💝 VALENTINE
+        </button>
+      </Link>
       <div
         ref={menuRef}
         className="menu hidden cursor-pointer md:flex justify-center items-center gap-6 px-3"
