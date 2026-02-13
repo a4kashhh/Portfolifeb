@@ -62,6 +62,14 @@ function Comp({ homeRef, aboutRef, workRef }: any) {
           CONTACT
         </button>
       </Link>
+      <Link href="https://valentine.a4kashhh.in" target="_blank">
+        <button
+          style={{ cursor: 'url("/icons/cursor.png"), auto' }}
+          className="px-6 py-2 rounded-full text-white bg-gradient-to-r from-pink-500 to-red-500 hover:scale-[105%] hover:from-red-600 hover:to-pink-600 active:scale-95 transition-all duration-300 delay-75 ease-in-out animate-pulse"
+        >
+          💝 VALENTINE
+        </button>
+      </Link>
     </div>
   );
 }
