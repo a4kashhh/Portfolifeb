@@ -51,14 +51,14 @@ const Marquee = () => {
         <div
           ref={contentRef}
           className={`flex items-center animate-scroll ${anton.className}`}>
-          <span className={design}>DAKSHAL</span>
+          <span className={design}>NEXT.JS</span>
           <span className={design}>#</span>
-          <span className={design}>BHAI</span>
+          <span className={design}>TAILWIND</span>
           <span className={design}>#</span>
-          <span className={design}>CRAZY</span>
+          <span className={design}>REACT.JS</span>
           <span className={design}>#</span>
-          <span className={design}>AADMI</span>
-          <span className={design}>kyu BHAI</span>
+          <span className={design}>GSAP</span>
+          <span className={design}>#</span>
         </div>
       </div>
     </section>
