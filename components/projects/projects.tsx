@@ -22,19 +22,19 @@ function Projects(props: Props) {
   const projects = [
     {
       index: 1,
-      imageLink: "/projects/shubhUI.png",
-      projectName: "SHUBH.UI",
+      imageLink: "/projects/akashUI.png",
+      projectName: "AKASH.UI",
       shortDes:
         "A COMPONENT LIBRARY CREATED WITH NEXT.JS, TAILWINDCSS AND GSAP",
-      gitLink: "https://github.com/ShubhMehrotra19/Shubh.UI",
-      deployedLink: "https://shubh-ui.vercel.app/",
+      gitLink: "https://github.com/a4kashhh/akash-ui",
+      deployedLink: "https://akash-ui.vercel.app/",
     },
     {
       index: 2,
       imageLink: "/projects/devlink.png",
       projectName: "DEVLINK",
       shortDes: "A DIGITAL CARD FOR DEVELOPERS TO CONNECT IN A FLASH!",
-      gitLink: "https://github.com/ShubhMehrotra19/devlinkv2",
+      gitLink: "https://github.com/a4kashhh/devlink",
       deployedLink: "https://devlinkv2.vercel.app/",
     },
     {
@@ -43,7 +43,7 @@ function Projects(props: Props) {
       projectName: "CUESOURCE",
       shortDes:
         "AN ONLINE PLATFORM FOR DEVELOPERS TO TAKE UP OPEN SOURCED ISSUES AS FREELANCE",
-      gitLink: "https://github.com/CueSource-PE2/CueSource-WebApp",
+      gitLink: "https://github.com/a4kashhh/cuesource",
       deployedLink: "https://cue-source-website.vercel.app/",
     },
     {
@@ -51,7 +51,7 @@ function Projects(props: Props) {
       imageLink: "/projects/chefio.png",
       projectName: "CHEFIO",
       shortDes: "A SOCIAL MEDIA PLATFORM FOR PEOPLE WHO LOVE TO COOK",
-      gitLink: "https://github.com/ShubhMehrotra19/chefio",
+      gitLink: "https://github.com/a4kashhh/chefio",
       deployedLink: "https://chefio.vercel.app/",
     },
   ];
@@ -60,18 +60,18 @@ function Projects(props: Props) {
     {
       index: 1,
       imageLink: "/projects/screen1.png",
-      projectName: "SHUBH.UI",
+      projectName: "AKASH.UI",
       shortDes:
         "A COMPONENT LIBRARY CREATED WITH NEXT.JS, TAILWINDCSS AND GSAP",
-      gitLink: "https://github.com/ShubhMehrotra19/Shubh.UI",
-      deployedLink: "https://shubh-ui.vercel.app/",
+      gitLink: "https://github.com/a4kashhh/akash-ui",
+      deployedLink: "https://akash-ui.vercel.app/",
     },
     {
       index: 2,
       imageLink: "/projects/devlinkMob.jpg",
       projectName: "DEVLINK",
       shortDes: "A DIGITAL CARD FOR DEVELOPERS TO CONNECT IN A FLASH!",
-      gitLink: "https://github.com/ShubhMehrotra19/DevLink-UI",
+      gitLink: "https://github.com/a4kashhh/devlink",
       deployedLink: "https://devlink-rho.vercel.app/",
     },
   ];

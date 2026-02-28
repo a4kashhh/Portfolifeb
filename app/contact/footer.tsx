@@ -15,7 +15,7 @@ function Footer(props: Props) {
         </p>
         <span className="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
           <Link
-            href="https://www.linkedin.com/in/shubhmehrotra19/"
+            href="https://www.linkedin.com/in/akash-pandey-987466190/"
             className="text-gray-400 hover:text-gray-500"
           >
             <svg
@@ -33,7 +33,7 @@ function Footer(props: Props) {
           </Link>
 
           <Link
-            href="https://x.com/ShubhMehro40210"
+            href="https://x.com/a4abortt"
             className="text-gray-400 hover:text-gray-500"
           >
             <svg
@@ -47,7 +47,7 @@ function Footer(props: Props) {
           </Link>
 
           <Link
-            href="https://github.com/ShubhMehrotra19/"
+            href="https://github.com/a4kashhh"
             className="text-gray-400 hover:text-gray-500"
           >
             <svg
