@@ -40,15 +40,8 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
           <Comp homeRef={homeRef} aboutRef={aboutRef} workRef={workRef} />
         </div>
 
-        {/* Mobile Menu Button + Valentine */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-3">
-          <Link href="https://valentine.a4kashhh.in" target="_blank">
-            <button
-              className="px-3 py-1.5 rounded-full text-white text-xs bg-gradient-to-r from-pink-500 to-red-500 hover:scale-[105%] active:scale-95 transition-all duration-300 ease-in-out animate-pulse"
-            >
-              💝
-            </button>
-          </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 rounded-lg bg-black text-[#b2de21]"
@@ -94,11 +87,6 @@ function Navbar({homeRef, aboutRef, workRef}: any) {
             <Link href="/contact">
               <button className="w-full px-4 py-3 rounded-full text-[#b2de21] bg-black text-left">
                 CONTACT
-              </button>
-            </Link>
-            <Link href="https://valentine.a4kashhh.in" target="_blank">
-              <button className="w-full px-4 py-3 rounded-full text-white bg-gradient-to-r from-pink-500 to-red-500 text-center font-bold">
-                💝 VALENTINE 💝
               </button>
             </Link>
           </div>
